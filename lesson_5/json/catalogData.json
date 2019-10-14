@@ -1,0 +1,54 @@
+{
+  "users": [
+    {
+      "id": 1,
+      "name": "Ivanov Ivan",
+      "age": 40
+    },
+    {
+      "id": 2,
+      "name": "Nikolaev Nikolay",
+      "age": 35
+    },
+    {
+      "id": 3,
+      "name": "Petrov Petr",
+      "age": 30
+    },
+    {
+      "id": 4,
+      "name": "Petrov Nikolay",
+      "age": 30
+    }
+  ],
+  "catalog": [
+    {
+      "id": 1,
+      "title": "Компьютерная мышь",
+      "price": 40
+    },
+    {
+      "id": 2,
+      "title": "Жесткий диск SDD",
+      "price": 10000
+    },
+    {
+      "id": 3,
+      "title": "Материнская плата",
+      "price": 4000
+    },
+    {
+      "id": 4,
+      "title": "Видео-карта",
+      "price": 15000
+    }
+  ],
+  "basket": [
+    {
+      "id": "3",
+      "title": "Материнская плата",
+      "price": "4000",
+      "count": 1
+    }
+  ]
+}
