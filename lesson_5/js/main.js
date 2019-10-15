@@ -157,10 +157,8 @@ class BasketList {
                 console.log(error);
             })
             .then(() => {
-                const $item = document.querySelector(`.basket`);
-                if ($item) {
-                    $item.childNodes.remove();
-                }
+                const $item = document.querySelector(`.basket__wrap`);
+                $item.innerHTML = '';
                 this.render();
             });
     }
