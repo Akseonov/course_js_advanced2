@@ -54,12 +54,19 @@ class ProductList {
 
     _addToCart() {
         const $block = document.querySelector(this.container);
-
+        const basketObject = new BasketList();
         $block.addEventListener('click', (event) => {
             if (event.target.classList.contains('products__button')) {
-                // const id = event.target.dataset.id;
-                const basketObject = new BasketList();
-                basketObject.add(event.target.dataset.id, event.target.dataset);
+                const id = event.target.dataset.id;
+                const dataset = event.target.dataset;
+                const $item = document.querySelector(`.basket__item[data-id="${id}"]`);
+                if ($item) {
+                    const $currCount = document.querySelector('.basket__count');
+                    $currCount.value = +$currCount.value + 1;
+                    basketObject.update(id, $currCount.value);
+                } else {
+                    basketObject.add(id, dataset);
+                }
             }
         })
     }
@@ -116,7 +123,7 @@ class BasketList {
             })
     }
 
-    _update(id, value) {
+    update(id, value) {
         if (value < 1) {
             if(confirm('Действительно хотите удалить последний товар из корзины?')) {
                 fetch(`${API}/basket/${id}`, {
@@ -169,7 +176,7 @@ class BasketList {
         $block.addEventListener('change', (event) => {
             if (event.target.classList.contains('basket__count')) {
                 const $parant = event.target.parentElement;
-                this._update($parant.dataset.id, event.target.value);
+                this.update($parant.dataset.id, event.target.value);
             }
         })
     }
