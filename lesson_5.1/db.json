@@ -2,34 +2,34 @@
   "users": [
     {
       "id": 1,
-      "name": "Ivanov Ivan",
+      "name": "Vasya Pupkin",
       "age": 40
     },
     {
       "id": 2,
-      "name": "Nikolaev Nikolay",
-      "age": 35
+      "name": "Kolya Pupkin",
+      "age": 41
     },
     {
       "id": 3,
-      "name": "Petrov Petr",
-      "age": 30
+      "name": "Vanya Pupkin",
+      "age": 42
     },
     {
       "id": 4,
-      "name": "Petrov Nikolay",
-      "age": 30
+      "name": "Igor Pupkin",
+      "age": 40
     }
   ],
-  "catalog": [
+  "goods": [
     {
       "id": 1,
       "title": "Компьютерная мышь",
-      "price": 40
+      "price": 400
     },
     {
       "id": 2,
-      "title": "Жесткий диск SDD",
+      "title": "Жесткий диск SSD 1Tb",
       "price": 10000
     },
     {
@@ -43,24 +43,18 @@
       "price": 15000
     }
   ],
-  "basket": [
+  "cart": [
     {
       "id": "2",
-      "title": "Жесткий диск SDD",
+      "title": "Жесткий диск SSD 1Tb",
       "price": "10000",
-      "count": 1
-    },
-    {
-      "id": "3",
-      "title": "Материнская плата",
-      "price": "4000",
-      "count": 1
+      "qty": 16
     },
     {
       "id": "4",
       "title": "Видео-карта",
       "price": "15000",
-      "count": 1
+      "qty": 7
     }
   ]
 }
