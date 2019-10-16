@@ -15,7 +15,6 @@
     <main>
       <h2>Каталог товаров</h2>
       <input type="text" v-model="query" name="query" placeholder="Поиск" />
-      <button @click="handleSearchClick">Поиск</button>
       <div class="catalog">
         <div v-for="item in filteredItems" class="item">
           <h3>{{item.title}}</h3>
@@ -44,19 +43,11 @@
       el: '#root',
       data: {
         items: [],
-        filteredItems: [],
         cart: [],
         query: '',
         visible: true,
       },
       methods: {
-        handleSearchClick() {
-          this.filteredItems = this.items.filter((item) => {
-            const regexp = new RegExp(this.query, 'i');
-
-            return regexp.test(item.title);
-          });
-        },
         handleBuyClick(item) {
           fetch('/cart', {
             method: 'POST',
@@ -81,7 +72,6 @@
           .then(response => response.json())
           .then((goods) => {
             this.items = goods;
-            this.filteredItems = goods;
           });
 
         fetch('/cart')
@@ -93,7 +83,14 @@
       computed: {
         total() {
           return this.cart.reduce((acc, item) => acc + item.qty * item.price, 0);
-        }
+        },
+        filteredItems() {
+           return this.items.filter((item) => {
+            const regexp = new RegExp(this.query, 'i');
+
+            return regexp.test(item.title);
+          })
+        },
       }
     });
   </script>
