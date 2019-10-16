@@ -15,12 +15,15 @@
     <main>
       <h2>Каталог товаров</h2>
       <input type="text" v-model="query" name="query" placeholder="Поиск" />
-      <div class="catalog">
+      <div v-if="filteredItems.length" class="catalog">
         <div v-for="item in filteredItems" class="item">
           <h3>{{item.title}}</h3>
           <p>{{item.price}}</p>
           <button class="buy" @click="handleBuyClick(item)">Buy</button>
         </div>
+      </div>
+      <div v-if="!filteredItems.length">
+        Список товаров пуст
       </div>
       <h2>Корзина</h2>
       <div class="cart">
